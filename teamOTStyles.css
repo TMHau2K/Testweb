@@ -1,0 +1,103 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	/* background:#302929; */
+	background:#dedede;
+}
+.wrapper{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.mail{
+	width: 600px;
+	height: 350px;
+	background: #ff8789;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	position: relative;
+	transform-style: preserve-3d;
+	cursor: pointer;
+	z-index:8;
+}
+.mail:before{
+	content:"";
+	position: absolute;
+	top:0;
+	right:0;
+	border-left: 300px solid transparent;
+	border-right: 300px solid #ff393c;
+	border-top: 175px solid transparent;
+	border-bottom: 175px solid #ff393c;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	z-index:5;
+}
+.mail:after{
+	content:"";
+	position: absolute;
+	top:0;
+	left:0;
+	border-left: 300px solid #ff5355;
+	border-right: 300px solid transparent;
+	border-top: 175px solid transparent;
+	border-bottom: 175px solid #ff5355;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 10px;
+	z-index:4;
+}
+.cover:before{
+	content:"";
+	position: absolute;
+	top:0;
+	left:0;
+	border-left: 300px solid transparent;
+	border-right: 300px solid transparent;
+	border-top: 175px solid #ff8789;
+	border-bottom: 175px solid transparent;
+	z-index:6;
+	transform-origin: top;
+	transform: rotateX(0deg);
+	transition: all 1s 1s ease;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.letter{
+	position: absolute;
+	z-index:3;
+	top:0px;
+	left:10px;
+	background: #eeeeee;
+	width: 580px;
+	height: 300px;
+	border-radius: 15px;
+	transition: all 1s ease;
+}
+.letter h1{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	font-size: 40px;
+	color: #798992;
+}
+.mail:hover{
+	box-shadow: 0px 5px 10px 2px #cc0000;
+}
+.mail:hover .cover:before{
+	transform: rotateX(180deg);
+	transition: all 1s ease;
+}
+.mail:hover .letter{
+	top: -100px;
+	transition: all 1.5s 1s ease;
+}
