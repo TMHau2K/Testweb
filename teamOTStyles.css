@@ -3,7 +3,6 @@
 	padding:0;
 }
 body{
-	/* background:#302929; */
 	background:#dedede;
 }
 .wrapper{
@@ -11,9 +10,19 @@ body{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	background: #ff8789;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	transition: all 1s 0.5S ease;
+	box-shadow: 0px 5px 10px 2px #cc0000;
+
 }
 
 .mail{
+	top: 0;
+	left:0;
 	width: 600px;
 	height: 350px;
 	background: #ff8789;
@@ -24,7 +33,7 @@ body{
 	position: relative;
 	transform-style: preserve-3d;
 	cursor: pointer;
-	z-index:8;
+	
 }
 .mail:before{
 	content:"";
@@ -39,6 +48,7 @@ body{
 	border-bottom-right-radius: 10px;
 	border-top-right-radius: 10px;
 	z-index:5;
+
 }
 .mail:after{
 	content:"";
@@ -53,6 +63,7 @@ body{
 	border-bottom-right-radius: 10px;
 	border-top-left-radius: 10px;
 	z-index:4;
+	
 }
 .cover:before{
 	content:"";
@@ -66,23 +77,65 @@ body{
 	z-index:6;
 	transform-origin: top;
 	transform: rotateX(0deg);
-	transition: all 1s 1s ease;
+	transition: all 0.5s 2s ease;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 }
 
 .letter{
+	content:"";
 	position: absolute;
 	z-index:3;
-	top:0px;
+	top:5px;
 	left:10px;
 	background: #eeeeee;
+	background-image: url(bb.png);
+	background-repeat: no-repeat;
+	background-size: 300px 350px;
+	background-position: right;
 	width: 580px;
-	height: 300px;
+	height: 335px;
 	border-radius: 15px;
-	transition: all 1s ease;
+	transition: all 1s 1s ease;
+	border:2px solid;
+    border-color:#009900;
+	
 }
-.letter h1{
+.lleft{
+	content:"";
+	position: absolute;
+	z-index:3;
+	top:0;
+	left:0;
+	background:#eeeeee;
+	width: 290px;
+	height: 335px;
+	border-radius: 15px;
+	transform-origin: left;
+	transform: rotateY(0deg);
+	transition: all 0.5s 0.1s ease;
+	border:2px solid;
+    border-color:#009900;
+	
+}
+.lright{
+	content:"";
+	position: absolute;
+	z-index:3;
+	top:0;
+	right:0;
+	background:#eeeeee;
+	background-position: left;
+	width: 290px;
+	height: 335px;
+	border-radius: 15px;
+	transform-origin: right;
+	transform: rotateY(0deg);
+	transition: all 0.5s 0.1s ease;
+	border:2px solid;
+    border-color:#009900;
+}
+h2{
 	position: absolute;
 	top:50%;
 	left:50%;
@@ -90,14 +143,45 @@ body{
 	font-size: 40px;
 	color: #798992;
 }
-.mail:hover{
-	box-shadow: 0px 5px 10px 2px #cc0000;
+h1{
+	position: absolute;
+	top:20px;
+	left:50px;
+	font-size: 40px;
+	color: #798992;
+	
+	animation: type 10s steps(14);
+	overflow: hidden;
+	white-space:nowrap;
+	border-right: 3px solid green;
+	width: 14ch;
+}
+@keyframes type{
+	0%{
+		width:0ch;
+	}
+	100%{
+		width:14ch;
+	}
 }
 .mail:hover .cover:before{
 	transform: rotateX(180deg);
 	transition: all 1s ease;
 }
 .mail:hover .letter{
-	top: -100px;
-	transition: all 1.5s 1s ease;
+	top: -350px;
+	transition: all 2s 1s ease;
 }
+.mail:hover .lleft{
+	transform: rotateY(-180deg);
+	transition: all 1s 3.5s ease;
+}
+.mail:hover .lright{
+	transform: rotateY(180deg);
+	transition: all 1s 3.5s ease;
+}
+.wrapper:hover{
+	top:600px;
+	transition: all 1s ease;
+}
+
